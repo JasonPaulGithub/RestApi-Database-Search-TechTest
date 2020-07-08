@@ -1,5 +1,6 @@
 package com.mycompany.myapp.repository;
 
+import com.mycompany.myapp.domain.Movie;
 import com.mycompany.myapp.domain.User;
 
 import org.springframework.cache.annotation.Cacheable;
@@ -35,4 +36,5 @@ public interface UserRepository extends MongoRepository<User, String> {
     Optional<User> findOneByLogin(String login);
 
     Page<User> findAllByLoginNot(Pageable pageable, String login);
+
 }

@@ -1,5 +1,6 @@
 package com.mycompany.myapp.web.rest;
 
+import com.mycompany.myapp.domain.Movie;
 import com.mycompany.myapp.domain.User;
 import com.mycompany.myapp.repository.UserRepository;
 import com.mycompany.myapp.security.SecurityUtils;
@@ -185,20 +186,4 @@ public class AccountResource {
             password.length() <= ManagedUserVM.PASSWORD_MAX_LENGTH;
     }
 
-    // TODO: below this line ----
-
-    // Decouple password encoder and decrypter as a dependency from the UserService
-
-    /**
-     *  Get one password
-     * */
-    private static void getPassword(String password) {
-    }
-
-
-    /**
-     *  Get all passwords
-     * */
-    private static void getAllPasswords(String password) {
-    }
 }

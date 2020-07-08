@@ -1,0 +1,95 @@
+<jhi-alert-error></jhi-alert-error>
+
+<jhi-alert></jhi-alert>
+
+<div>
+    <h2>
+        <span>Search Directors : {{director}}</span>
+    </h2>
+    <input #newDirector>
+    <button (click)="addDirector(newDirector.value)">Search Director</button>
+    <h3>
+    <hr>
+    <td>{{ directorResult.movie }}</td> 
+    <hr>
+    <td>{{ directorResult.director }}</td> 
+    <hr>
+    <td>{{ directorResult.rating }}</td> 
+    <hr>
+    </h3>
+    <h2>
+        <span>Filter by Rating > {{rating}}</span>
+    </h2>
+
+    <input #newRating>
+    <button (click)="addRating(newRating.value)">Change Rating</button>
+
+    <tr *ngFor="let movie of ratings ;trackBy: trackId">
+        <td><a [routerLink]="['/movie', movie.id, 'view']">{{ movie.id }}</a></td>
+        <td>{{ movie.movie }}</td>
+        <td>{{ movie.director }}</td>
+        <td>{{ movie.rating }}</td>
+    </tr>
+</tbody>
+
+<div>
+    <h2 id="page-heading">
+        <span>All Movies</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-movie" [routerLink]="['/movie/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span>
+            Create a new Movie
+            </span>
+        </button>
+    </h2>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="movies?.length === 0">
+        <span>No movies found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="movies && movies.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span>ID</span></th>
+                    <th scope="col" ><span>Movie</span></th>
+                    <th scope="col" ><span>Director</span></th>
+                    <th scope="col" ><span>Rating</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let movie of movies ;trackBy: trackId">
+                    <td><a [routerLink]="['/movie', movie.id, 'view']">{{ movie.id }}</a></td>
+                    <td>{{ movie.movie }}</td>
+                    <td>{{ movie.director }}</td>
+                    <td>{{ movie.rating }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/movie', movie.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/movie', movie.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(movie)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

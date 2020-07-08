@@ -1,0 +1,29 @@
+{
+  "name": "Movie",
+  "fields": [
+    {
+      "fieldName": "movie",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "director",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "rating",
+      "fieldType": "Integer"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20200707182433",
+  "entityTableName": "movie",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

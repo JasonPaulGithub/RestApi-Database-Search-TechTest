@@ -1,0 +1,5 @@
+entity Movie {
+    movie String,
+	director String,
+    rating Integer
+}
