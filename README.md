@@ -11,7 +11,7 @@ Linux:
 
 ```
 $ npm install
-$ ./gradlew
+$ ./gradlew bootrun
 $ npm start
 ```
 
@@ -19,7 +19,7 @@ Windows:
 
 ```
 npm install
-gradlew
+gradlew bootrun
 npm start
 ```
 
