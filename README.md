@@ -29,3 +29,15 @@ Log in:
 admin
 admin
 ```
+
+If all else fails try this in two seperate consoles if you are having issues with webpack:
+
+```
+console 1: $ ./gradlew -x webpack
+console 2: $ npm start
+```
+
+```
+console 1: gradlew -x webpack
+console 2: npm start
+```
