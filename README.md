@@ -3,7 +3,7 @@
 ---
 
 To run you will need:
-Gradle / NPM / Java 8
+Gradle / NPM / Java 8 / MongoDB
 
 ---
 
